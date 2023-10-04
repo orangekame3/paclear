@@ -35,18 +35,18 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "pacpac",
+	Use:   "paclean",
 	Short: "A brief description of your application",
-	Run:   pacpac,
+	Run:   paclean,
 }
 
-func pacpac(cmd *cobra.Command, args []string) {
+func paclean(cmd *cobra.Command, args []string) {
 	rows, cols := getSize()
-	width := len(PACPAC[0])
-	height := len(PACPAC)
+	width := len(paclean[0])
+	height := len(paclean)
 	for y := 0; y <= rows-height; y += height {
 		for x := 0; x <= cols-width/3; x++ {
-			for j, line := range PACPAC {
+			for j, line := range paclean {
 				fmt.Printf("\033[%d;%dH%s", y+j+1, x, line)
 			}
 			time.Sleep(10 * time.Millisecond)
@@ -77,7 +77,7 @@ func getSize() (int, int) {
 	return rows, cols
 }
 
-var PACPAC = []string{
+var paclean = []string{
 	"	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀",
 	"	⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⡾⠿⠛⠋⠉⠉⠉⠉⠉⠙⠛⠿⢷⣦⣄⡀⠀⠀",
 	"	⠀⠀⠀⠀⠀⣠⣶⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣦⣀",

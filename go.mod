@@ -1,4 +1,4 @@
-module github.com/orangekame3/pacpac
+module github.com/orangekame3/paclean
 
 go 1.20
 

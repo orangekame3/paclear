@@ -1,0 +1,11 @@
+version: "3"
+
+tasks:
+  default:
+    desc: Display available tasks
+    cmds:
+      - task -l
+  lint:
+    desc: Run MegaLinter
+    cmds:
+      - mega-linter-runner --flavor go

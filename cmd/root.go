@@ -42,11 +42,11 @@ var rootCmd = &cobra.Command{
 
 func paclean(cmd *cobra.Command, args []string) {
 	rows, cols := getSize()
-	width := len(paclean[0])
-	height := len(paclean)
+	width := len(pac[0])
+	height := len(pac)
 	for y := 0; y <= rows-height; y += height {
 		for x := 0; x <= cols-width/3; x++ {
-			for j, line := range paclean {
+			for j, line := range pac {
 				fmt.Printf("\033[%d;%dH%s", y+j+1, x, line)
 			}
 			time.Sleep(10 * time.Millisecond)
@@ -77,7 +77,7 @@ func getSize() (int, int) {
 	return rows, cols
 }
 
-var paclean = []string{
+var pac = []string{
 	"	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀",
 	"	⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⡾⠿⠛⠋⠉⠉⠉⠉⠉⠙⠛⠿⢷⣦⣄⡀⠀⠀",
 	"	⠀⠀⠀⠀⠀⣠⣶⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣦⣀",

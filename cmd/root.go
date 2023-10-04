@@ -35,12 +35,12 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "paclean",
+	Use:   "paclear",
 	Short: "A brief description of your application",
-	Run:   paclean,
+	Run:   paclear,
 }
 
-func paclean(cmd *cobra.Command, args []string) {
+func paclear(cmd *cobra.Command, args []string) {
 	rows, cols := getSize()
 	width := len(pac[0])
 	height := len(pac)

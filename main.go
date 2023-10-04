@@ -22,7 +22,7 @@ THE SOFTWARE.
 package main
 
 import (
-	"github.com/orangekame3/paclean/cmd"
+	"github.com/orangekame3/paclear/cmd"
 )
 
 func main() {

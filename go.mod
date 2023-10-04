@@ -1,4 +1,4 @@
-module github.com/orangekame3/paclean
+module github.com/orangekame3/paclear
 
 go 1.20
 

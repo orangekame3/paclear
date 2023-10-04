@@ -24,7 +24,7 @@ package main
 import (
 	"time"
 
-	"github.com/orangekame3/cobra-template/cmd"
+	"github.com/orangekame3/pacpac/cmd"
 )
 
 func main() {

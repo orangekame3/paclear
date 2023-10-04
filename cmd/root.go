@@ -58,6 +58,7 @@ func paclean(cmd *cobra.Command, args []string) {
 	_ = clear.Clear()
 }
 
+// Execute executes the root command.
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		os.Exit(1)

@@ -22,12 +22,10 @@ THE SOFTWARE.
 package main
 
 import (
-	"time"
-
 	"github.com/orangekame3/pacpac/cmd"
 )
 
 func main() {
-	cmd.SetVersionInfo(version, time.Now().String())
+	//cmd.SetVersionInfo(version, time.Now().String())
 	cmd.Execute()
 }

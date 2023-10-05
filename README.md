@@ -55,7 +55,7 @@ paclear -s 2
 ### Go
 
 ```bash
-go get github.com/orangekame3/paclear@latest
+go install github.com/orangekame3/paclear@latest
 ```
 
 ### Homebrew

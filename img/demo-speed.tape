@@ -40,7 +40,7 @@
 #   Hide                            Hide the subsequent commands from the output
 #   Show                            Show the subsequent commands in the output
 
-Output img/demo.gif
+Output img/demo-speed.gif
 
 Set FontSize 32
 Set Width 2000
@@ -51,5 +51,5 @@ Type "tree"
 Enter
 Show
 Sleep 500ms
-Type "paclear" Sleep 1000ms Enter
+Type "paclear -s 2" Sleep 1000ms Enter
 Sleep 5s

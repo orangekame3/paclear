@@ -10,9 +10,6 @@
 <a href="https://github.com/orangekame3/paclear/actions/workflows/tagpr.yml">
 <img src="https://github.com/orangekame3/paclear/actions/workflows/tagpr.yml/badge.svg" alt="Tag PR workflow status badge">
 </a>
-<a href="https://github.com/orangekame3/paclear/actions?query=workflows/MegaLinter">
-<img src="https://github.com/orangekame3/paclear/workflows/MegaLinter/badge.svg" alt="MegaLinter badge">
-</a>
 </p>
 
 「このコンテンツはファンメイドコンテンツです。

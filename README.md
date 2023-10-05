@@ -1,5 +1,7 @@
 # paclear
 
+paclear is a clear command with pacman animation
+
 <p align="center">
 <a href="https://opensource.org/licenses/MIT">
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License badge">
@@ -12,8 +14,9 @@
 </a>
 </p>
 
-「このコンテンツはファンメイドコンテンツです。
-[「パックマン及び自社IPゲームシリーズ」ファンメイドコンテンツポリシー](https://www.pacman.com/jp/policy/fanmade.php)のもと制作されています。」
+> **Warning**
+>「このコンテンツはファンメイドコンテンツです。
+>[「パックマン及び自社IPゲームシリーズ」ファンメイドコンテンツポリシー](https://www.pacman.com/jp/policy/fanmade.php)のもと制作されています。」
 
 ## Demo
 

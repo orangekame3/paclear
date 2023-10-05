@@ -25,7 +25,7 @@
 
 paclear can set color to the output.
 
-support blue, red, green, yellow, white(default).
+support blue, red, green, yellow, pink, white(default).
 
 ```bash
 paclear -c yellow
@@ -77,7 +77,7 @@ Usage:
   paclear [flags]
 
 Flags:
-  -c, --color string   Set pacman color (available: red, green, blue, yellow, pink) (default "default")
+  -c, --color string   Set pacman color (available: red, green, blue, yellow, pink) (default "white")
   -h, --help           help for paclear
   -s, --speed int32    Set pacman multiple speed (default: 1) (default 1)
   -v, --version        version for paclear

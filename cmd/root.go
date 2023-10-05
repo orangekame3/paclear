@@ -133,3 +133,8 @@ var pac = []string{
 	"	⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⢷⣶⣤⣄⣀⣀⣀⣀⣀⣠⣤⣶⡾⠟⠋⠁⠀⠀",
 	"	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀",
 }
+
+// SetVersionInfo sets version and date to rootCmd
+func SetVersionInfo(version, date string) {
+	rootCmd.Version = fmt.Sprintf("%s (Built on %s)", version, date)
+}

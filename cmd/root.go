@@ -75,7 +75,7 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().StringVarP(&color, "color", "c", "default", "Set pacman color (available: red, green, blue, yellow, pink)")
+	rootCmd.Flags().StringVarP(&color, "color", "c", "white", "Set pacman color (available: red, green, blue, yellow, pink)")
 	rootCmd.Flags().Int32VarP(&speed, "speed", "s", 1, "Set pacman multiple speed (default: 1)")
 }
 

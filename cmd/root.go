@@ -49,7 +49,10 @@ func paclear(cmd *cobra.Command, args []string) {
 	rows, cols := getSize()
 	width := len(pac[0])
 	height := len(pac)
-	pitch := time.Duration(10 / time.Duration(speed) * time.Millisecond)
+	if speed < 1 {
+		speed = 1
+	}
+	pitch := time.Duration(20 / time.Duration(speed) * time.Millisecond)
 	for y := 0; y <= rows-height; y += height {
 		for x := 0; x <= cols-width/3; x++ {
 			for j, line := range styledPac {

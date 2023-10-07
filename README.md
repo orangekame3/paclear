@@ -1,6 +1,6 @@
 <div align="center">
   
-# 👾paclear
+# 👾paclear👾
   
 paclear is a clear command with PAC-MAN animation
   

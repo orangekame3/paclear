@@ -45,19 +45,34 @@ var rootCmd = &cobra.Command{
 }
 
 func paclear(cmd *cobra.Command, args []string) {
-	styledPac := style(color, pac)
+	openPac := style(color, openPac)
+	closePac := style(color, closePac)
 	rows, cols := getSize()
-	width := len(pac[0])
-	height := len(pac)
+	width := len(openPac[0])
+	height := len(openPac)
 	if speed < 1 {
 		speed = 1
 	}
 	pitch := time.Duration(20 / time.Duration(speed) * time.Millisecond)
+	close := true
+	cnt := 0
 	for y := 0; y <= rows-height; y += height {
 		for x := 0; x <= cols-width/3; x++ {
-			for j, line := range styledPac {
-				fmt.Printf("\033[%d;%dH%s", y+j+1, x, line)
+			if close {
+				for j, line := range openPac {
+					fmt.Printf("\033[%d;%dH%s", y+j+1, x, line)
+				}
+			} else {
+				for j, line := range closePac {
+					fmt.Printf("\033[%d;%dH%s", y+j+1, x, line)
+				}
 			}
+			cnt++
+			if cnt == 10 {
+				close = !close
+				cnt = 0
+			}
+
 			time.Sleep(pitch)
 			for k := 0; k < height; k++ {
 				fmt.Printf("\033[%d;%dH%s", y+k+1, x, strings.Repeat(" ", width))
@@ -113,7 +128,7 @@ func style(color string, lines []string) []string {
 	return styled
 }
 
-var pac = []string{
+var openPac = []string{
 	"	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀",
 	"	⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⡾⠿⠛⠋⠉⠉⠉⠉⠉⠙⠛⠿⢷⣦⣄⡀⠀⠀",
 	"	⠀⠀⠀⠀⠀⣠⣶⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣦⣀",
@@ -134,7 +149,23 @@ var pac = []string{
 	"	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀",
 }
 
-// SetVersionInfo sets version and date to rootCmd
-func SetVersionInfo(version, date string) {
-	rootCmd.Version = fmt.Sprintf("%s (Built on %s)", version, date)
+var closePac = []string{
+	"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⣤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+	"⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⡾⠿⠛⠋⠉⠉⠉⠉⠉⠙⠛⠿⢷⣦⣄⡀⠀⠀⠀⠀⠀",
+	"⠀⠀⠀⠀⠀⠀⠀⣠⣶⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣦⣀⠀⠀⠀",
+	"⠀⠀⠀⠀⠀⢠⣾⠟⠁⠀⠀⠀⠀⠀⠀⣴⡿⠿⣶⡀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⡄⠀⠀",
+	"⠀⠀⠀⠀⣰⡿⠋⠀⠀⠀⠀⠀⠀⠀⠘⣿⣇⣀⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⡆⠀",
+	"⠀⠀⠀⣰⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⡄",
+	"⠀⠀⢠⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿",
+	"⠀⠀⣸⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿",
+	"⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣿⣿",
+	"⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿",
+	"⠀⠀⢹⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿",
+	"⠀⠀⠘⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿",
+	"⠀⠀⠀⠹⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣺⡟",
+	"⠀⠀⠀⠀⠹⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⡿⠃",
+	"⠀⠀⠀⠀⠀⠘⢿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⡟⠁⠀",
+	"⠀⠀⠀⠀⠀⠀⠀⠙⠿⣶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⠟⠉⠀⠀⠀",
+	"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⢷⣶⣤⣄⣀⣀⣀⣀⣀⣠⣤⣶⡾⠟⠋⠁⠀⠀⠀⠀⠀",
+	"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠛⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
 }

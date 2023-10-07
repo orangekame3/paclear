@@ -1,3 +1,4 @@
+// Package cmd is a root command.
 /*
 Copyright © 2023 Takafumi Miyanaga <miya.org.0309@gmail.com>
 
@@ -19,6 +20,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-package main
+package cmd
 
-const version = "0.0.6"
+import "fmt"
+
+// Version is a version of paclear
+const Version = "0.0.6"
+
+// SetVersionInfo sets version and date to rootCmd
+func SetVersionInfo(version, date string) {
+	rootCmd.Version = fmt.Sprintf("%s (Built on %s)", version, date)
+}

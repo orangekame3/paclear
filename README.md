@@ -1,6 +1,7 @@
-<p align="center">
+<div align="center">
   
 # 👾paclear
+  
 paclear is a clear command with pacman animation
   
 <a href="https://opensource.org/licenses/MIT">
@@ -12,7 +13,7 @@ paclear is a clear command with pacman animation
 <a href="https://github.com/orangekame3/paclear/actions/workflows/tagpr.yml">
 <img src="https://github.com/orangekame3/paclear/actions/workflows/tagpr.yml/badge.svg" alt="Tag PR workflow status badge">
 </a>
-</p>
+</div>
 
 > **Note**
 > I've crated paclear in compliance with [the official fan-made policy of Pac-Man](https://www.pacman.com/jp/policy/fanmade.php).

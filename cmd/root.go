@@ -24,13 +24,14 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 	"os"
-	"os/exec"
 	"strings"
 	"time"
 
 	"github.com/charmbracelet/lipgloss"
 	"github.com/dmowcomber/go-clear"
+	"github.com/nsf/termbox-go"
 	"github.com/spf13/cobra"
 )
 
@@ -95,12 +96,14 @@ func init() {
 }
 
 func getSize() (int, int) {
-	cmd := exec.Command("stty", "size")
-	cmd.Stdin = os.Stdin
-	out, _ := cmd.Output()
-	var rows, cols int
-	fmt.Sscan(string(out), &rows, &cols)
-	return rows, cols
+	err := termbox.Init()
+	if err != nil {
+		log.Fatalf("Error initializing termbox: %v", err)
+	}
+	defer termbox.Close()
+
+	width, height := termbox.Size()
+	return height, width
 }
 
 func style(color string, lines []string) []string {

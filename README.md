@@ -2,7 +2,7 @@
   
 # 👾paclear
   
-paclear is a clear command with pacman animation
+paclear is a clear command with PAC-MAN animation
   
 <a href="https://opensource.org/licenses/MIT">
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License badge">

@@ -1,8 +1,8 @@
-# paclear
-
-paclear is a clear command with pacman animation
-
 <p align="center">
+  
+# 👾paclear
+paclear is a clear command with pacman animation
+  
 <a href="https://opensource.org/licenses/MIT">
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License badge">
 </a>

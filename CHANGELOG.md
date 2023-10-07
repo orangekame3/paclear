@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.0.12](https://github.com/orangekame3/paclear/compare/v0.0.11...v0.0.12) - 2023-10-07
+
 ## [v0.0.11](https://github.com/orangekame3/paclear/compare/v0.0.10...v0.0.11) - 2023-10-07
 
 ## [v0.0.10](https://github.com/orangekame3/paclear/compare/v0.0.9...v0.0.10) - 2023-10-07

@@ -9,3 +9,9 @@ tasks:
     desc: Run MegaLinter
     cmds:
       - mega-linter-runner --flavor go
+  gen-gif:
+    desc: Run MegaLinter
+    cmds:
+      - vhs < img/demo.tape
+      - vhs < img/demo-speed.tape
+      - vhs < img/demo-color.tape

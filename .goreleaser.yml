@@ -44,3 +44,15 @@ brews:
       owner: orangekame3
       name: homebrew-tap
       token: "{{ .Env.TAP_GITHUB_TOKEN }}"
+
+winget:
+  - name: paclear
+    publisher: orangekame3
+    license: "mit"
+    copyright: Takafumi Miyanaga
+    short_description: paclear is a joke command of clear.
+    path: manifests/orangekame3/paclear
+    repository:
+      owner: orangekame3
+      name: winget-pkgs
+      token: "{{ .Env.TAP_GITHUB_TOKEN }}"

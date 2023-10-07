@@ -67,6 +67,27 @@ go install github.com/orangekame3/paclear@latest
 brew install orangekame3/tap/paclear
 ```
 
+### Winget
+
+First, you need to enable LocalManifestFiles in winget settings.
+Type the following command in PowerShell. (Run as Administrator)
+
+```shell
+winget settings --enable LocalManifestFiles
+```
+
+Then, download the installer file and install it.Recommended to use GitBash.
+
+```shell
+curl -L "https://raw.githubusercontent.com/orangekame3/paclear/main/win-installer.sh" -o "win-installer.sh"
+```
+
+And run the installer.
+
+```shell
+.\win-installer.sh
+```
+
 ### Binary
 
 Download the latest compiled binaries and put it anywhere in your executable path.

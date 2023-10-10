@@ -40,7 +40,7 @@ changelog:
       - "^test:"
 
 brews:
-  - tap:
+  - repository:
       owner: orangekame3
       name: homebrew-tap
       token: "{{ .Env.TAP_GITHUB_TOKEN }}"

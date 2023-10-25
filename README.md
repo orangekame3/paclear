@@ -16,7 +16,7 @@ paclear is a clear command with PAC-MAN animation
 </div>
 
 > **Note**
-> I've crated paclear in compliance with [the official fan-made policy of Pac-Man](https://www.pacman.com/jp/policy/fanmade.php).
+> I've created paclear in compliance with [the official fan-made policy of Pac-Man](https://www.pacman.com/jp/policy/fanmade.php).
 >
 >「このコンテンツはファンメイドコンテンツです。
 >[「パックマン及び自社IPゲームシリーズ」ファンメイドコンテンツポリシー](https://www.pacman.com/jp/policy/fanmade.php)のもと制作されています。」

@@ -49,7 +49,7 @@ func paclear(cmd *cobra.Command, args []string) {
 	openPac := style(color, openPac)
 	closePac := style(color, closePac)
 	rows, cols := getSize()
-	width := len(openPac[0])
+	width := len([]rune(openPac[0]))
 	height := len(openPac)
 	if speed < 1 {
 		speed = 1
@@ -58,11 +58,11 @@ func paclear(cmd *cobra.Command, args []string) {
 	close := true
 	cnt := 0
 	diff_y := 0
-	if rows-height > 0{
-		diff_y = rows-height
+	if rows-height > 0 {
+		diff_y = rows - height
 	}
 	for y := 0; y <= diff_y; y += height {
-		for x := 0; x <= cols-width/3; x++ {
+		for x := 0; x <= cols-width; x++ {
 			if close {
 				for j, line := range openPac {
 					fmt.Printf("\033[%d;%dH%s", y+j+1, x, line)

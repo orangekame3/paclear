@@ -80,7 +80,7 @@ func paclear(cmd *cobra.Command, args []string) {
 
 			time.Sleep(pitch)
 			for k := 0; k < height; k++ {
-				fmt.Printf("\033[%d;%dH%s", y+k+1, x, strings.Repeat(" ", width))
+				fmt.Printf("\033[%d;%dH%s", y+k+1, x, strings.Repeat("    ", width))
 			}
 		}
 	}

@@ -57,11 +57,11 @@ func paclear(cmd *cobra.Command, args []string) {
 	pitch := time.Duration(20 / time.Duration(speed) * time.Millisecond)
 	close := true
 	cnt := 0
-	diff_y := 0
+	diffY := 0
 	if rows-height > 0 {
-		diff_y = rows - height
+		diffY = rows - height
 	}
-	for y := 0; y <= diff_y; y += height {
+	for y := 0; y <= diffY; y += height {
 		for x := 0; x <= cols-width; x++ {
 			if close {
 				for j, line := range openPac {
